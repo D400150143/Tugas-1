@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+float input(float a, float b, float c);
+float diskriminan(float D, float a, float b, float c);
+float akarkuadrat(float D,  float a, float b, float x1, float x2);
+
+void main(float a, float b, float c) {
+	input(a,b,c);
+}
+
+float input(float a, float b, float c) {
+	float D;
+	printf("Masukkan nilai a : \n");
+	scanf("%f",&a);
+	printf("Masukkan nilai b : \n");
+	scanf("%f",&b);
+	printf("Masukkan nilai c : \n");
+	scanf("%f",&c);
+	clrscr();
+	printf("Nilai a = %.2f\n", a);
+	printf("Nilai b = %.2f\n", b);
+	printf("Nilai c = %.2f\n", c);
+	diskriminan(D,a,b,c);
+	return 0;
+}
+
+float diskriminan(float D, float a, float b, float c){
+	float x1,x2;
+	D = b * b - 4 * a * c;
+	printf("Diskriminan = %.2f", D);
+	akarkuadrat(D,a,b,x1,x2);
+	return 0;
+}
+
+float akarkuadrat(float D,  float a, float b, float x1, float x2){
+	if(D<0)printf("Akar-akar persamaan kuadratnya adalah IMAGINER");
+	else if(D>0) {
+	x1=((-b)+(sqrt(D)))/2*a;
+	x2=((-b)-(sqrt(D)))/2*a;
+
+	printf("\nNilai X1 = %.3lf\n", x1);
+	printf("Nilai X2 = %.3lf\n", x2);
+	}
+
+	else if (D==0)
+	{
+	x1=((-b)+(sqrt(D)))/2*a;
+	x2=x1;
+
+	printf("\nNilai X1 = %.3lf\n", x1);
+	printf("Nilai X2 = %.3lf\n", x2);
+	}
+	return 0;
+}
+
